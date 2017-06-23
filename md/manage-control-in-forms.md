@@ -133,7 +133,14 @@ Since the HTML form element has no border, the CSS classes added have no impact 
 ### Error summary panel _(SP only)_
 
 For debug purposes, you can add a panel at the top of the form to list all errors in the form:
-From the UI Designer home page, create a **fragment**. Set _errorPanel_ as the fragment name. In the **Variable** panel at the bottom, create one variable, of type **exposed: yes**, called _errors_. Create two other variables, of type **exposed: no**: 
+From the UI Designer home page, create a **fragment**. Set _errorPanel_ as the fragment name. 
+
+In the **Variable** panel at the bottom, create one variable, of type **exposed: yes**, called _errors_. 
+You will need to bind his variable _errors_ will in the page where you insert the fragment called _errorPanel_  
+For that, you will need to create a variable on the page where you will add the fragment, for example called _errorFromFragment_. 
+Then, only when you add this fragment to the page, you will use the Page editor to bind the exposed variable with the variable defined in the page. 
+
+Create two other variables, of type **exposed: no**: 
 
  * errorRequired: it allows to tell if in the form, some required data are missing.
  * errorDate: it allows to tell if in the form, some dates are invalid.
